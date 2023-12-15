@@ -49,9 +49,19 @@ Endpoint : POST /api/contacts/:contactId/addresses/:addressId
 Header :
 
 - Authorization : token
-  Request body :
+
+Request body :
 
 ```json
+{
+  {
+  "street": "jalan",
+  "city": "kota",
+  "province": "provinsi",
+  "country": "negara",
+  "postalCode": "kode post"
+}
+}
 
 ```
 
