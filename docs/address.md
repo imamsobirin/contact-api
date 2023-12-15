@@ -3,7 +3,7 @@
 ## Create Address API
 
 Endpoint : POST /api/contacts/:contactId/addresses
-Header :
+Headers :
 
 - Authorization : token
 
@@ -44,9 +44,9 @@ Response body error :
 
 ## Update Address API
 
-Endpoint : POST /api/contacts/:contactId/addresses/:addressId
+Endpoint : PUT /api/contacts/:contactId/addresses/:addressId
 
-Header :
+Headers :
 
 - Authorization : token
 
@@ -54,22 +54,26 @@ Request body :
 
 ```json
 {
-  {
   "street": "jalan",
   "city": "kota",
   "province": "provinsi",
   "country": "negara",
   "postalCode": "kode post"
 }
-}
-
 ```
 
 Response body success :
 
 ```json
 {
-  "data": {}
+  "data": {
+    "id": 1,
+    "street": "jalan",
+    "city": "kota",
+    "province": "provinsi",
+    "country": "negara",
+    "postalCode": "kode post"
+  }
 }
 ```
 
@@ -77,27 +81,29 @@ Response body error :
 
 ```json
 {
-  "errors": ""
+  "errors": "country is required"
 }
 ```
 
 ## Get Address API
 
-Endpoint : POST /api/address
-Header :
+Endpoint : GET /api/contacts/:contactId/addresses/:addressId
+Headers :
 
 - Authorization : token
-  Request body :
-
-```json
-
-```
 
 Response body success :
 
 ```json
 {
-  "data": {}
+  "data": {
+    "id": 1,
+    "street": "jalan",
+    "city": "kota",
+    "province": "provinsi",
+    "country": "negara",
+    "postalCode": "kode post"
+  }
 }
 ```
 
@@ -105,27 +111,39 @@ Response body error :
 
 ```json
 {
-  "errors": ""
+  "errors": "contact is not found"
 }
 ```
 
 ## List Address API
 
-Endpoint : POST /api/address
-Header :
+Endpoint : GET /api/contacts/:contactId/address
+Headers :
 
 - Authorization : token
-  Request body :
-
-```json
-
-```
 
 Response body success :
 
 ```json
 {
-  "data": {}
+  "data": [
+    {
+      "id": 1,
+      "street": "jalan",
+      "city": "kota",
+      "province": "provinsi",
+      "country": "negara",
+      "postalCode": "kode post"
+    },
+    {
+      "id": 2,
+      "street": "jalan",
+      "city": "kota",
+      "province": "provinsi",
+      "country": "negara",
+      "postalCode": "kode post"
+    }
+  ]
 }
 ```
 
@@ -133,27 +151,22 @@ Response body error :
 
 ```json
 {
-  "errors": ""
+  "errors": "contact is not found"
 }
 ```
 
 ## Remove Address API
 
-Endpoint : POST /api/address
+Endpoint : DELETE /api/contacts/:contactId/addresses/:addressId
 Header :
 
 - Authorization : token
-  Request body :
-
-```json
-
-```
 
 Response body success :
 
 ```json
 {
-  "data": {}
+  "data": "OK"
 }
 ```
 
@@ -161,6 +174,6 @@ Response body error :
 
 ```json
 {
-  "errors": ""
+  "errors": "address is not found"
 }
 ```
