@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
-import { logger } from "./logging";
+import { logger } from "./logging.js";
 // setup database
-export const prismaClient = new prismaClient({
+export const prismaClient = new PrismaClient({
   log: [
     {
       emit: "event",
