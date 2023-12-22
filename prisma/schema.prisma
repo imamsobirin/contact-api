@@ -23,7 +23,7 @@ model User {
 
 model Contact{
   id Int @id @default(autoincrement())
-  firsName String @db.VarChar(100)
+  firstName String @db.VarChar(100)
   lastName String? @db.VarChar(100)
   email String? @db.VarChar(100)
   phone String? @db.VarChar(20)
